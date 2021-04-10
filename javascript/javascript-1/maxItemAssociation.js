@@ -31,7 +31,17 @@ function maxItemAssociation(purchases) {
 
 	recommendations = recommendations.map(item => [...item].sort()).sort();
 
-	return recommendations[0];
+	let maxRecLength = 0;
+  let maxRecPos;
+
+	recommendations.forEach((item, index) => {
+		if (recommendations[index].length > maxRecLength) {
+			maxRecLength = recommendations[index].length;
+			maxRecPos = index;
+		};
+	});
+
+	return recommendations[maxRecPos];
 };
 
 let purchasesList = [
