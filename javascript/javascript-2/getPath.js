@@ -11,7 +11,7 @@ function getPath(htmlElem) {
     };
   
     if (elem.className !== "") {
-      result = `${result}.${elem.className.trim().split(/\s+/).join(".")}`;
+      result = `${result}.${Array.from(elem.classList).join('.')}`;
     };
   
     return result;
@@ -36,7 +36,7 @@ function getPath(htmlElem) {
 
   const getElemDOM = (elem) => {
     if (elem === document.body) {
-      elemPathParts = [...elemPathParts, 'body'];
+      elemPathParts = [...elemPathParts, getElemProps(elem)];
 
       return elemPathParts.reverse();
     };

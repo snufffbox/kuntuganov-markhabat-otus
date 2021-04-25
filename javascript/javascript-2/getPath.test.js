@@ -2,7 +2,7 @@ const getPath = require("./getPath");
 
 const testHTML = `
 <html>
-  <body>
+  <body id="main" class="main-class">
     <section class="container">
       <div id="box-1">
         <p>Text 1</p>
