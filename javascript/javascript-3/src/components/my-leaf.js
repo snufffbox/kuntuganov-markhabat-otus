@@ -26,7 +26,7 @@ class MyLeaf extends HTMLElement {
 
   connectedCallback() {
     this.shadowRoot.appendChild(tmplLeaf.content.cloneNode(true));
-    let leafElem = this.shadowRoot.querySelector('.leaf');
+    const leafElem = this.shadowRoot.querySelector('.leaf');
     leafElem.innerHTML = this.getAttribute('leafId');
   };
 };

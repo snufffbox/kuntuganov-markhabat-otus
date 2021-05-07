@@ -26,7 +26,7 @@ class MyTree extends HTMLElement {
 
   connectedCallback() {
     this.shadowRoot.appendChild(tmplTree.content.cloneNode(true));
-    let treeElem = this.shadowRoot.querySelector('slot[name="treeId"]');
+    const treeElem = this.shadowRoot.querySelector('slot[name="treeId"]');
     treeElem.innerHTML = this.getAttribute('treeId');
   };
 };
