@@ -3,20 +3,18 @@ import { MyTree } from './components/my-tree';
 import { MyLeaf } from './components/my-leaf';
 import tree from '../tree.json';
 
-export type TreeParams = {
+interface TreeParams {
   id: number,
-  items?: any
+  items?: TreeParams[]
 };
 
 function drawTree(tree: TreeParams, elem: HTMLElement): void {
-  const nodeId: number = tree.id;
-  
-  const textId: string = nodeId.toString();
+  let nodeId: number = tree.id;
 
   if(tree.items) {    
     const branch = new MyTree();
 
-    branch.setAttribute('treeId', textId);
+    branch.setAttribute('treeId', nodeId.toString());
 
     elem.appendChild(branch);
 
@@ -24,7 +22,7 @@ function drawTree(tree: TreeParams, elem: HTMLElement): void {
   } else {
     const leaf = new MyLeaf();
 
-    leaf.setAttribute('leafId', textId);
+    leaf.setAttribute('leafId', nodeId.toString());
 
     elem.appendChild(leaf);
   };
