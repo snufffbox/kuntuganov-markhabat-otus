@@ -38,7 +38,7 @@ function maxItemAssociation(purchases) {
 		if (recommendations[index].length > maxRecLength) {
 			maxRecLength = recommendations[index].length;
 			maxRecPos = index;
-		}
+		};
 	});
 
 	return recommendations[maxRecPos];
