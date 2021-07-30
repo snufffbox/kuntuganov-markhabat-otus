@@ -42,9 +42,9 @@ channelsSchema.plugin(autoIncrement.plugin, {
   incrementBy: 1
 });
 
-const Channel = connection.model('Channels2', channelsSchema);
+const Channel = connection.model('Channels', channelsSchema);
 
-const Article = connection.model('Articles2', articlesSchema);
+const Article = connection.model('Articles', articlesSchema);
 
 function saveChannel(data) {
   const line = new Channel(data);
