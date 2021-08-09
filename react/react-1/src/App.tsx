@@ -8,7 +8,7 @@ import { FAVOURITES_STORAGE } from './config/config'
 
 import './styles/styles.css'
 
-export type CityWeather = {
+export interface CityWeather {
 	city: string
 	received: boolean
 	description: string
