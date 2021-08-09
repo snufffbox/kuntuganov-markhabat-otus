@@ -1,0 +1,17 @@
+{
+  "name": "node-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3",
+    "mongoose-auto-increment": "^5.0.1",
+    "rss-parser": "^3.12.0"
+  }
+}
