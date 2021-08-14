@@ -1,5 +1,5 @@
 import React, { Component, FormEvent, MouseEvent } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import { FavouriteCities } from "./components/FavouriteCities";
 import { CityInputForm } from "./components/CityInputForm";

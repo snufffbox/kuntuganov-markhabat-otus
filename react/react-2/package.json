@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.tsx",
+  "homepage": ".",
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack serve"
