@@ -6,7 +6,7 @@ export interface IFavouriteCitiesProps {
   onClick: (event: MouseEvent<HTMLLIElement>) => void;
 }
 
-export class FavouriteCities extends Component<IFavouriteCitiesProps, any> {
+export class FavouriteCities extends Component<IFavouriteCitiesProps> {
   render() {
     return (
       <div className="favourite_list">

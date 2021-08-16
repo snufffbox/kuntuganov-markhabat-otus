@@ -6,7 +6,7 @@ export interface ICityInputFormProps {
   onSearchCity: () => void;
 }
 
-export class CityInputForm extends Component<ICityInputFormProps, any> {
+export class CityInputForm extends Component<ICityInputFormProps> {
   gotCity = () => {
     this.props.onSearchCity();
   };
@@ -19,7 +19,7 @@ export class CityInputForm extends Component<ICityInputFormProps, any> {
     return (
       <div className="form">
         <label className="form_label">
-          Введите название города{" "}
+          Введите название города
           <input
             className="form_input"
             name="cityInput"

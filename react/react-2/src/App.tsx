@@ -131,8 +131,8 @@ export class App extends Component<{}, IAppState> {
   };
 
   loadWeather = (city: string): void => {
-    try {
-      getCurrentWeatherInfo(city).then((data) => {
+    getCurrentWeatherInfo(city)
+      .then((data) => {
         if (data.cod === 200) {
           this.setState({
             weather: {
@@ -158,21 +158,21 @@ export class App extends Component<{}, IAppState> {
             },
           });
         }
+      })
+      .catch((error) => {
+        this.setState({
+          weather: {
+            ...this.state.weather,
+            received: false,
+            error_text: error,
+          },
+        });
       });
-    } catch (error_text) {
-      this.setState({
-        weather: {
-          ...this.state.weather,
-          received: false,
-          error_text,
-        },
-      });
-    }
   };
 
   loadForecast = (city: string): void => {
-    try {
-      getForecastInfo(city).then((data) => {
+    getForecastInfo(city)
+      .then((data) => {
         const forecastData: ForecastDataList[] = [];
 
         data.list.map((value: any, index: number) => {
@@ -205,16 +205,16 @@ export class App extends Component<{}, IAppState> {
             },
           });
         }
+      })
+      .catch((error) => {
+        this.setState({
+          forecast: {
+            ...this.state.forecast,
+            received: false,
+            error_text: error,
+          },
+        });
       });
-    } catch (error_text) {
-      this.setState({
-        forecast: {
-          ...this.state.forecast,
-          received: false,
-          error_text,
-        },
-      });
-    }
   };
 
   componentDidMount() {

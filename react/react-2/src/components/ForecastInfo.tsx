@@ -7,7 +7,7 @@ export interface IForecastInfoProps {
   forecast: CityForecast;
 }
 
-export class ForecastInfo extends Component<IForecastInfoProps, any> {
+export class ForecastInfo extends Component<IForecastInfoProps> {
   render() {
     return (
       <>
@@ -17,7 +17,6 @@ export class ForecastInfo extends Component<IForecastInfoProps, any> {
             <div className="information_header">
               Подробная информация о погоде в городе:
               <span className="information_city">
-                {" "}
                 {this.props.forecast.city}
               </span>
             </div>

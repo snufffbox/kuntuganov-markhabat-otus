@@ -10,71 +10,71 @@ export interface IWeatherInfoProps {
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-export class WeatherInfo extends Component<IWeatherInfoProps, any> {
+export class WeatherInfo extends Component<IWeatherInfoProps> {
   render() {
     return (
       <>
         {this.props.weather.received ? (
           <div className="information">
             <div className="information_header">
-              Информация о погоде в городе:{" "}
+              Информация о погоде в городе:
               <span className="information_city">
                 {this.props.weather.city}
               </span>
             </div>
             <hr />
             <div className="information_item">
-              Страна:{" "}
+              Страна:
               <span className="information_item_bold">
                 {this.props.weather.country}
               </span>
             </div>
             <div className="information_item">
-              Описание:{" "}
+              Описание:
               <span className="information_item_bold">
                 {this.props.weather.description}
               </span>
             </div>
             <div className="information_item">
-              Температура:{" "}
+              Температура:
               <span className="information_item_bold">
                 {this.props.weather.temperature}
-              </span>{" "}
+              </span>
               &deg;C
             </div>
             <div className="information_item">
-              Ощущается как:{" "}
+              Ощущается как:
               <span className="information_item_bold">
                 {this.props.weather.feels_like}
-              </span>{" "}
+              </span>
               &deg;C
             </div>
             <div className="information_item">
-              Максимальная температура:{" "}
+              Максимальная температура:
               <span className="information_item_bold">
                 {this.props.weather.temperature_max}
-              </span>{" "}
+              </span>
               &deg;C
             </div>
             <div className="information_item">
-              Минимальная температура:{" "}
+              Минимальная температура:
               <span className="information_item_bold">
                 {this.props.weather.temperature_min}
-              </span>{" "}
+              </span>
               &deg;C
             </div>
             <div className="information_item">
-              Влажность:{" "}
+              Влажность:
               <span className="information_item_bold">
                 {this.props.weather.humidity}
               </span>
               %
             </div>
             <div className="information_item">
-              Давление:{" "}
+              Давление:
               <span className="information_item_bold">
                 {this.props.weather.pressure}
-              </span>{" "}
+              </span>
               hPa
             </div>
             <div className="information_item">
