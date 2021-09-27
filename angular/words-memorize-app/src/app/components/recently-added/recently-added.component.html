@@ -1,0 +1,26 @@
+<h1>Последние добавленные слова</h1>
+<p *ngFor="let item of TranslateList">
+  {{ item.id }}
+  <span *ngFor="let val of item.values">
+    | {{ val.lang }} : {{ val.text }}</span
+  >
+</p>
+<span>Введите слово на английском:</span>
+<input
+  type="text"
+  [pattern]="wordPattern"
+  [(ngModel)]="srcWord"
+  #uname="ngModel"
+  required
+/>
+<button
+  *ngIf="!uname.errors?.pattern"
+  mat-raised-button
+  (click)="getTranslation()"
+  color="primary"
+>
+  Перевести
+</button>
+<div class="error" *ngIf="uname.errors?.pattern">
+  Введенное слово некорректно
+</div>

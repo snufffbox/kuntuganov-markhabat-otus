@@ -1,0 +1,23 @@
+<h1>Настройки</h1>
+<mat-form-field>
+  <mat-select id="language" placeholder="Выберите язык" [(value)]="selected">
+    <mat-option *ngFor="let language of languages" [value]="language">
+      {{ language }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-select
+    id="wordsNumber"
+    placeholder="Кол-во слов:"
+    [(value)]="wordsNumber"
+  >
+    <mat-option *ngFor="let num of wordsNumbers" [value]="num">
+      {{ num }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="saveSettings()">
+  Сохранить
+</button>

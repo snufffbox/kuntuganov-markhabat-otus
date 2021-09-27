@@ -1,0 +1,16 @@
+<h1 *ngIf="words === 0">Для начала добавьте слова в словарь</h1>
+<div *ngIf="words > 0">
+  <h1>Упражнения</h1>
+  <h2>Слово #{{ word }} из {{ words }}</h2>
+  <h3>Переведите слово {{ checkingWord }} на {{ lang }}</h3>
+
+  <input type="text" [(ngModel)]="testing" required />
+  <br />
+  <p *ngIf="showError">Неправильно</p>
+  <p *ngIf="showSuccess">Правильно</p>
+  <br />
+  <button mat-raised-button (click)="check()" color="primary">Проверить</button>
+  <button mat-raised-button (click)="goToNext()" color="primary">
+    Следующее слово
+  </button>
+</div>
