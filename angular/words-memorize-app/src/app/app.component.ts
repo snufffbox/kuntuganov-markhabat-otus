@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Приложения для запоминания иностранных слов';
-
-  /*navLinks = [
-    { path: 'recently-added', label: 'Недавно добавленные' },
-    { path: 'go', label: 'Тренировка' },
-    { path: 'settings', label: 'Настройки' }
-  ];*/
 };

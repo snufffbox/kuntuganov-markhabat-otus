@@ -28,6 +28,8 @@ export class TrainingComponent implements OnInit {
 
   showSuccess = false;
 
+  isDefaultLang = false;
+
   constructor(private Dictionary: DictionaryService) {}
 
   ngOnInit() {
@@ -48,6 +50,9 @@ export class TrainingComponent implements OnInit {
     this.Dictionary.getLanguage().subscribe((res) => {
       this.lang = res;
     });
+
+    if (this.lang === DefaultLang)
+      this.isDefaultLang = true;
   };
 
   loadLanguages() {

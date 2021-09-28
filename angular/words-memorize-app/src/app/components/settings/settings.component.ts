@@ -11,8 +11,6 @@ export class SettingsComponent implements OnInit {
 
   selected = this.languages[0];
 
-  selectedNo = 20;
-
   wordsNumber: number = 5;
 
   wordsNumbers: number[] = [5, 10, 15, 20];

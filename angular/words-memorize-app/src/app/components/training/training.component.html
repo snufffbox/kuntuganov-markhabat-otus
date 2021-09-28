@@ -1,5 +1,6 @@
 <h1 *ngIf="words === 0">Для начала добавьте слова в словарь</h1>
-<div *ngIf="words > 0">
+<h1 *ngIf="isDefaultLang">Для начала выберите язык в настройках</h1>
+<div *ngIf="words > 0 && !isDefaultLang">
   <h1>Упражнения</h1>
   <h2>Слово #{{ word }} из {{ words }}</h2>
   <h3>Переведите слово {{ checkingWord }} на {{ lang }}</h3>

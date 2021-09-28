@@ -7,9 +7,7 @@ export class StorageService {
   constructor() { };
 
   save(key: string, data: string) {
-    console.log(data);
-
-    if (typeof data === 'object' && data !== null) {
+    if (typeof data === 'object' && data) {
       data = JSON.stringify(data);
     };
 
@@ -27,5 +25,5 @@ export class StorageService {
     catch (e) { console.log(e) };
 
     return data;
-  }
-}
+  };
+};
