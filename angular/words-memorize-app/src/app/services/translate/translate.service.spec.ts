@@ -1,12 +1,20 @@
 import { TestBed } from '@angular/core/testing';
-
+import { HttpClient } from '@angular/common/http';
 import { TranslateService } from './translate.service';
 
 describe('TranslateService', () => {
   let service: TranslateService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    const spyHttpClient = jasmine.createSpyObj('HttpClient', ['client']);
+
+    TestBed.configureTestingModule({
+      providers: [
+        TranslateService,
+        { provide: HttpClient, useValue: spyHttpClient },
+      ],
+    });
+    
     service = TestBed.inject(TranslateService);
   });
 

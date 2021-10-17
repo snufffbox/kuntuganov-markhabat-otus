@@ -25,7 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
     TrainingComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -41,4 +41,4 @@ import { MatSelectModule } from '@angular/material/select';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {};

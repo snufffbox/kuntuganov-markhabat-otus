@@ -103,6 +103,62 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/words-memorize-app/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "words-memorize-app:build:development",
+              "serverTarget": "words-memorize-app:server:development"
+            },
+            "production": {
+              "browserTarget": "words-memorize-app:build:production",
+              "serverTarget": "words-memorize-app:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": ["/"]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "words-memorize-app:build:production",
+              "serverTarget": "words-memorize-app:server:production"
+            },
+            "development": {
+              "browserTarget": "words-memorize-app:build:development",
+              "serverTarget": "words-memorize-app:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
